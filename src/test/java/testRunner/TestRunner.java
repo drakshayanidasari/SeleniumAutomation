@@ -6,7 +6,7 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-    features = ".//Features/PIMmodule.feature",
+    features = ".//Features/Admin.feature",
     glue = "stepDefinitions", // patho of stepdefinition pate 
     dryRun = false,
     monochrome = true,
@@ -18,3 +18,5 @@ import io.cucumber.junit.CucumberOptions;
 )
 public class TestRunner {
 }
+
+

@@ -6,6 +6,7 @@ import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import pageObjects.Admin;
 import pageObjects.Login;
 import pageObjects.Pim;
 
@@ -14,6 +15,7 @@ public class Base_class1 {
     public static WebDriver driver; // Shared across all step classes
     public Login lp;
     public Pim addpim;
+    public Admin admin;
 
     // Launch browser if not already launched
     public static void launchBrowser() {

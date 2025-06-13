@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import io.cucumber.java.en.When;
 import utilities.WaitHelper;
 
 public class Admin {
@@ -19,17 +20,34 @@ public class Admin {
 	//(//*[@class='oxd-text oxd-text--span oxd-main-menu-item--name'])[1]
 	@FindBy(xpath="(//*[@class='oxd-text oxd-text--span oxd-main-menu-item--name'])[1]") WebElement Admin;
 	//(//*[@type='button'])[6]
-	@FindBy(xpath="//*[@type='button'])[6]") WebElement Addbutton;
+	@FindBy(xpath="(//*[@type='button'])[6]") WebElement Addbutton;
 	@FindBy(xpath="(//*[@class='oxd-icon bi-caret-down-fill oxd-select-text--arrow'])[1]") WebElement select;
 	@FindBy(xpath="(//*[text()='Admin'])[3]") WebElement admin;
-	@FindBy(xpath="//*[@placeholder='Type for hints...']") WebElement empname;
-	//ctrl+shift+p emulate a focused page
+	@FindBy(xpath="//*[@placeholder='Type for hints...']")
+	WebElement empname;
 	@FindBy(xpath="(//*[@class='oxd-icon bi-caret-down-fill oxd-select-text--arrow'])[2]") WebElement status;
 	@FindBy(xpath="//*[text()='Enabled']") WebElement enabled;
-	@FindBy(xpath="//*[@class='oxd-input oxd-input--active oxd-input--error']") WebElement username;
-	@FindBy(xpath="(//*[@type='password'])[1]") WebElement password;
-	@FindBy(xpath="(//*[@type='password'])[2]") WebElement cnfpassword;
-	@FindBy(xpath="//*[@type='submit']") WebElement save;
+
+	@FindBy(xpath="//*[@class='oxd-input oxd-input--active oxd-input--error']")
+	WebElement username;
+
+	@FindBy(xpath="(//*[@type='password'])[1]")
+	WebElement password;
+
+	@FindBy(xpath="(//*[@type='password'])[2]")
+	WebElement cnfpassword;
+
+	@FindBy(xpath="//*[@type='submit']")
+	WebElement save;
+	//@FindBy(xpath="//*[@placeholder='Type for hints...']") WebElement empname;
+	//ctrl+shift+p emulate a focused page
+	//@FindBy(xpath="(//*[@class='oxd-icon bi-caret-down-fill oxd-select-text--arrow'])[2]") WebElement status;
+	//@FindBy(xpath="//*[text()='Enabled']") WebElement enabled;
+	//@FindBy(xpath="//*[@class='oxd-input oxd-input--active oxd-input--error']") WebElement username;
+	//@FindBy(xpath="//*[@class='oxd-input oxd-input--active oxd-input--error']") WebElement username;
+	//@FindBy(xpath="(//*[@type='password'])[1]") WebElement password;
+	//@FindBy(xpath="(//*[@type='password'])[2]") WebElement cnfpassword;
+	//@FindBy(xpath="//*[@type='submit']") WebElement save;
 	
 	
 	public void clickAdminmodule() {
@@ -67,23 +85,23 @@ public class Admin {
         enabled.click();
     }
 
-    public void enterUsername(String user) {
-    	waithelper.waitForElement(username, 20);
-        username.sendKeys(user);
+    public void enterUsername(String uname) {
+    	waithelper.waitForElement(enabled, 20);
+        username.sendKeys(uname);
     }
 
-    public void enterPassword(String pass) {
-    	waithelper.waitForElement(password, 20);
-        password.sendKeys(pass);
+    public void enterPassword(String pwd) {
+    	waithelper.waitForElement(enabled, 20);
+    	password.sendKeys(pwd);
     }
 
-    public void enterConfirmPassword(String confirmPass) {
-    	waithelper.waitForElement(cnfpassword, 20);
-        cnfpassword.sendKeys(confirmPass);
+    public void enterConfirmPassword(String pwd) {
+    	waithelper.waitForElement(enabled, 20);
+    	cnfpassword.sendKeys(pwd);
     }
 
     public void clickSave() {
-    	waithelper.waitForElement(save, 20);
+        waithelper.waitForElement(save, 20);
         save.click();
     }
 }

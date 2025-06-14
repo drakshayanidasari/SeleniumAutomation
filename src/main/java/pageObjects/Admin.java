@@ -7,6 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import io.cucumber.java.en.When;
 import utilities.WaitHelper;
+import utilities.testutility;
 
 public class Admin {
 	WebDriver driver;
@@ -28,13 +29,16 @@ public class Admin {
 	@FindBy(xpath="(//*[@class='oxd-icon bi-caret-down-fill oxd-select-text--arrow'])[2]") WebElement status;
 	@FindBy(xpath="//*[text()='Enabled']") WebElement enabled;
 
-	@FindBy(xpath="//*[@class='oxd-input oxd-input--active oxd-input--error']")
+	//@FindBy(xpath="//*[@class='oxd-input oxd-input--active oxd-input--error']")
+	//WebElement username;
+	@FindBy(xpath="(//input[@class='oxd-input oxd-input--active'])[2]")
 	WebElement username;
-
-	@FindBy(xpath="(//*[@type='password'])[1]")
+	@FindBy(xpath="(//input[@type='password'])[1]")
 	WebElement password;
+	@FindBy(xpath = "//span[text()='Charles  Carter']")
+	WebElement selectemp;
 
-	@FindBy(xpath="(//*[@type='password'])[2]")
+	@FindBy(xpath="(//input[@type='password'])[2]")
 	WebElement cnfpassword;
 
 	@FindBy(xpath="//*[@type='submit']")
@@ -73,6 +77,8 @@ public class Admin {
     public void enterEmployeeName(String empName) {
     	waithelper.waitForElement(empname, 20);
         empname.sendKeys(empName);
+        selectemp.click();
+        
     }
 
     public void clickStatusDropdown() {
@@ -85,19 +91,19 @@ public class Admin {
         enabled.click();
     }
 
-    public void enterUsername(String uname) {
-    	waithelper.waitForElement(enabled, 20);
-        username.sendKeys(uname);
+    public void enterUsername() {
+    	testutility.enterRandomUsername(username, "usernamefield");
+
     }
 
-    public void enterPassword(String pwd) {
-    	waithelper.waitForElement(enabled, 20);
-    	password.sendKeys(pwd);
+    public void enterPassword() {
+    	
+    	testutility.enterRandomPassword(password, "passwordfield");
     }
 
-    public void enterConfirmPassword(String pwd) {
-    	waithelper.waitForElement(enabled, 20);
-    	cnfpassword.sendKeys(pwd);
+    public void enterConfirmPassword() {
+    	testutility.enterConfirmPassword(cnfpassword, "confirmpasswordfield");
+
     }
 
     public void clickSave() {

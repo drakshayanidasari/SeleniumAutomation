@@ -17,13 +17,6 @@ public class OrangeHRMsteps {
     WebDriver driver;
     Login lp;
 
-    
-    
-
- 
-        
-    
-
     @Given("I launches the application")
     public void i_launch_the_application() throws InterruptedException {
         driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");

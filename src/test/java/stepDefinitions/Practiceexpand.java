@@ -12,8 +12,12 @@ import junit.framework.Assert;
 import pageObjects.Login;
 
 public class Practiceexpand {
-	public WebDriver driver;
-	public Login lp;
+    public WebDriver driver;
+    public Login lp;
+
+    public Practiceexpand() {
+        this.driver = Base_class1.driver; // Assuming Base_class has a public static WebDriver named 'driver'
+    }
 	@Given("User Launch chrome browser")
 	public void user_launch_chrome_browser() {
 	    

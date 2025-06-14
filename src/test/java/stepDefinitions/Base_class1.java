@@ -3,6 +3,7 @@ package stepDefinitions;
 import java.time.Duration;
 
 import org.apache.commons.lang3.RandomStringUtils;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -16,6 +17,7 @@ public class Base_class1 {
     public Login lp;
     public Pim addpim;
     public Admin admin;
+    public Logger logger;
 
     // Launch browser if not already launched
     public static void launchBrowser() {

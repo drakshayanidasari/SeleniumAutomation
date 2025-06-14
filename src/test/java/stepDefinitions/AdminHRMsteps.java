@@ -58,22 +58,22 @@ public class AdminHRMsteps extends Base_class1 {
         admin.selectEnabledStatus(); // Selecting "Enabled" immediately
     }
 
-    @When("Enter the username as {string}")
-    public void enter_the_username_as(String uname) throws InterruptedException {
+    @When("Enter the username")
+    public void enter_the_username_as() throws InterruptedException {
     	Thread.sleep(3000);
-        admin.enterUsername(uname);
+        admin.enterUsername();
     }
 
-    @When("Enter the password as {string}")
-    public void enter_the_password_as(String pwd) throws InterruptedException {
+    @When("Enter the password")
+    public void enter_the_password_as() throws InterruptedException {
     	Thread.sleep(3000);
-        admin.enterPassword(pwd);
+        admin.enterPassword();
     }
 
-    @When("Enter the confirm password as {string}")
-    public void enter_the_confirm_password_as(String cpwd) throws InterruptedException {
+    @When("Enter the confirm password")
+    public void enter_the_confirm_password_as() throws InterruptedException {
     	Thread.sleep(3000);
-        admin.enterConfirmPassword(cpwd);
+        admin.enterConfirmPassword();
     }
 
     @When("click on the save button")
